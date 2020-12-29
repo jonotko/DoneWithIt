@@ -1,21 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import ImageInput from './app/components/ImageInput';
+import Screen from './app/components/Screen';
+import ListEditingScreen from './app/screens/ListEditingScreen';
+import ListingsScreen from './app/screens/ListingsScreen';
+import LoginScreen from './app/screens/LoginScreen';
+import MessagesScreen from './app/screens/MessagesScreen';
+import * as ImagePicker from 'expo-image-picker';
+import ImageInputList from './app/components/ImageInputList';
+import { NavigationContainer } from '@react-navigation/native';
+import AppNavigation from './app/navigation/AppNavigation';
+import navigationTheme from './app/navigation/NavigationTheme';
+
 
 export default function App() {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+		<NavigationContainer theme={navigationTheme}>
+			<AppNavigation />
+		</NavigationContainer>
+	);
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
